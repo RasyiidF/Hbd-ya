@@ -1,95 +1,58 @@
 let bgMusic = null;
 let musicStarted = false;
 
-// Fungsi untuk memutar musik (dipanggil setelah interaksi user)
-function playBackgroundMusic() {
-    if (!bgMusic) return;
-    
-    // Jika musik belum diputar sama sekali
-    if (!musicStarted) {
+// Fungsi untuk memutar musik (hanya sekali)
+function playMusicOnPage2() {
+    if (bgMusic && !musicStarted) {
         bgMusic.play().then(() => {
             musicStarted = true;
-            console.log("Musik mulai diputar");
+            console.log("Musik diputar di halaman 2");
         }).catch(err => {
             console.log("Gagal memutar musik:", err);
-            // Fallback: coba lagi nanti dengan cara lain
-            setTimeout(() => {
-                if (!musicStarted && bgMusic) {
-                    bgMusic.play().catch(e => console.log("Fallback gagal:", e));
-                }
-            }, 500);
         });
-    } else {
-        // Jika musik sudah pernah diputar tapi mungkin pause karena sesuatu
-        if (bgMusic.paused) {
-            bgMusic.play().catch(err => console.log("Resume musik gagal:", err));
-        }
     }
 }
 
-// Fungsi pindah ke halaman 2
+// Pindah dari halaman 1 ke halaman 2
 function openCard() {
     const page1 = document.getElementById('page1');
     const page2 = document.getElementById('page2');
     
-    // Mulai musik (jika belum)
-    playBackgroundMusic();
-    
     page1.classList.add('hide');
     setTimeout(() => {
         page2.classList.add('show');
+        // Musik mulai SETELAH halaman 2 tampil
+        playMusicOnPage2();
     }, 400);
 }
 
-// Fungsi pindah ke halaman 3
+// Pindah dari halaman 2 ke halaman 3
 function openLetter() {
     const page2 = document.getElementById('page2');
     const page3 = document.getElementById('page3');
-    
-    // Pastikan musik tetap berjalan
-    playBackgroundMusic();
     
     page2.classList.remove('show');
     page2.classList.add('hide');
     setTimeout(() => {
         page3.classList.add('show');
+        // Musik sudah berjalan dari halaman 2, tidak perlu diputar lagi
     }, 400);
 }
 
-// Event listener ketika halaman siap
+// Inisialisasi setelah halaman dimuat
 document.addEventListener('DOMContentLoaded', () => {
     bgMusic = document.getElementById('bgMusic');
     if (bgMusic) {
-        bgMusic.volume = 0.5;   // volume 50%
+        bgMusic.volume = 0.5;
         bgMusic.loop = true;
-        
-        // Debug: cek apakah file audio bisa dimuat
-        bgMusic.addEventListener('canplaythrough', () => {
-            console.log("Audio siap diputar");
-        });
-        bgMusic.addEventListener('error', (e) => {
-            console.log("Error loading audio:", e);
-        });
     }
     
     const envelopeBtn = document.getElementById('envelopeBtn');
     const noteBtn = document.getElementById('noteBtn');
     
-    // Interaksi pertama: sentuh di mana saja (termasuk amplop) akan mulai musik
-    // Ini untuk mengatasi browser yang sangat ketat (seperti Safari)
-    const firstInteraction = () => {
-        playBackgroundMusic();
-        // Hapus listener setelah interaksi pertama
-        document.body.removeEventListener('click', firstInteraction);
-        document.body.removeEventListener('touchstart', firstInteraction);
-        console.log("First interaction detected");
-    };
+    // Hapus atau komentar bagian firstInteraction karena musik hanya dipicu dari openCard
+    // (tidak perlu interaksi global lagi)
     
-    // Pasang listener untuk seluruh body (agar tap di area kosong juga memicu)
-    document.body.addEventListener('click', firstInteraction);
-    document.body.addEventListener('touchstart', firstInteraction);
-    
-    // Tombol amplop
     if (envelopeBtn) {
         envelopeBtn.addEventListener('click', openCard);
         envelopeBtn.addEventListener('touchstart', (e) => {
@@ -97,8 +60,6 @@ document.addEventListener('DOMContentLoaded', () => {
             openCard();
         }, { passive: false });
     }
-    
-    // Tombol note (kertas) di halaman 2
     if (noteBtn) {
         noteBtn.addEventListener('click', openLetter);
         noteBtn.addEventListener('touchstart', (e) => {
