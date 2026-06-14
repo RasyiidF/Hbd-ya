@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
-    <title>Happy Birthday - Surat Cinta & Bunga</title>
+    <title>Happy Birthday - Adee 🎂</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="scene">
-    <!-- Audio latar (di-start oleh JS setelah tap pertama) -->
+    <!-- Audio latar (ganti dengan file lagu kamu, hindari spasi) -->
     <audio id="bgMusic" loop preload="auto">
-        <!-- Ganti src dengan file musikmu sendiri -->
-        <source src="The Night We Met - Lord Huron.mp3" type="audio/mpeg">
-        <!-- Fallback: jika file tidak bisa di-load, tidak error -->
+        <source src="lagu.mp3" type="audio/mpeg">
+        <!-- Fallback: jika file tidak ada, gunakan URL online -->
+        <source src="The NightWeMetLordHuron.mp3" type="audio/mpeg">
     </audio>
 
     <!-- HALAMAN 1: Amplop -->
@@ -25,7 +25,7 @@
         <div class="tap-hint">tap to lanjut</div>
     </div>
 
-    <!-- HALAMAN 2: Kartu Ucapan dengan Foto Polaroid -->
+    <!-- HALAMAN 2: Kartu Ucapan + Foto Polaroid + Bunga & Kupu-Kupu -->
     <div id="page2">
         <div class="card-wrap">
             <div class="card-envelope-bg">
@@ -34,7 +34,7 @@
                     <div class="happy">Happy<br>Birthday</div>
                     <div class="date">23-Agustus-2026</div>
                 </div>
-                <!-- Foto Polaroid (border putih tebal + bayangan) -->
+                <!-- Foto Polaroid -->
                 <div class="polaroid polaroid1">
                     <img src="01ade.jpeg" alt="foto kenangan">
                     <div class="polaroid-caption"></div>
@@ -51,7 +51,7 @@
                     <img src="04ade.jpeg" alt="foto lucu">
                     <div class="polaroid-caption"></div>
                 </div>
-                <!-- Dekorasi bunga & kupu -->
+                <!-- Bunga dan Kupu-Kupu -->
                 <div class="deco rose">🌹</div>
                 <div class="deco lily">🌸</div>
                 <div class="deco butterfly">🦋</div>
@@ -64,19 +64,19 @@
             </div>
         </div>
         <div class="greeting-text">
-            Selamat ulang tahun Adee! kecepetan nyak ngasihnya <b>HHHEHEHHEEHE</b>, <b>SELAMAAAT YAAA</b>. 🎉
+            Selamat ulang tahun Adee! kecepatan nyak ngasihnya HHHHEEHHEEHE, SELAMAAAT YAAA.
         </div>
         <div class="tap-hint" style="margin-top:14px;">tap kertas untuk lanjut</div>
     </div>
 
-    <!-- HALAMAN 3: Surat Panjang dengan Scroll -->
+    <!-- HALAMAN 3: Surat Panjang dengan Scroll (tanpa QR) -->
     <div id="page3">
         <div class="letter-paper">
             <div class="deco rose" style="top:-8%; right:6%;">🌹</div>
             <div class="letter-text">
-                <p class="to">Untuk <b>Ade</b>,</p>
+                <p class="to">Untuk <b>Adee</b>,</p>
                 <p>
-                    Haii Adek ngga kerasa ya udah makin dewasa bentar lagi juga mau masuk SMA HBD ya!!
+                   Haii Adek ngga kerasa ya udah makin dewasa bentar lagi juga mau masuk SMA HBD ya!!
                     kalau ade buka ini mungkin dengan kaka yang ngga ada lagi buat ade dan juga maaf yah
                     kaka cuman bisa ngasih ini buat adek tapi keknya ini effort terakhir kaka kado pertama
                     dan terakhir dari kaka buat adek maaf kaka selalu mempermasalahkan hal hal kecil yang 
