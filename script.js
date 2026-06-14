@@ -1,4 +1,3 @@
-// Variabel audio dan status apakah sudah diputar
 let bgMusic = null;
 let musicStarted = false;
 
@@ -8,8 +7,7 @@ function playBackgroundMusic() {
             musicStarted = true;
             console.log("Musik diputar");
         }).catch(err => {
-            console.log("Autoplay diblokir, diperlukan interaksi lagi:", err);
-            // fallback: coba lagi nanti
+            console.log("Autoplay diblokir, coba lagi setelah interaksi:", err);
         });
     }
 }
@@ -18,7 +16,7 @@ function openCard() {
     const page1 = document.getElementById('page1');
     const page2 = document.getElementById('page2');
     
-    // Start musik jika belum
+    // Mulai musik saat amplop diklik (interaksi pertama)
     playBackgroundMusic();
     
     page1.classList.add('hide');
@@ -31,7 +29,7 @@ function openLetter() {
     const page2 = document.getElementById('page2');
     const page3 = document.getElementById('page3');
     
-    // Pastikan musik tetap jalan
+    // Pastikan musik tetap berjalan
     playBackgroundMusic();
     
     page2.classList.remove('show');
@@ -42,25 +40,22 @@ function openLetter() {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Inisialisasi audio
     bgMusic = document.getElementById('bgMusic');
     if (bgMusic) {
-        bgMusic.volume = 0.6; // atur volume (0-1)
+        bgMusic.volume = 0.6;
         bgMusic.loop = true;
     }
     
     const envelopeBtn = document.getElementById('envelopeBtn');
     const noteBtn = document.getElementById('noteBtn');
     
-    // Fungsi untuk menangani tap pertama (mulai musik)
+    // Interaksi pertama: jika user tap di mana saja selain tombol, musik mulai
     const firstInteraction = () => {
         playBackgroundMusic();
-        // Hapus listener setelah interaksi pertama agar tidak double
         document.body.removeEventListener('click', firstInteraction);
         document.body.removeEventListener('touchstart', firstInteraction);
     };
     
-    // Pasang listener global untuk interaksi pertama (jika user tap di mana saja)
     document.body.addEventListener('click', firstInteraction);
     document.body.addEventListener('touchstart', firstInteraction);
     
