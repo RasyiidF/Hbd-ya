@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
+    <title>Happy Birthday - Surat Cinta & Bunga</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="scene">
+    <!-- Audio latar (di-start oleh JS setelah tap pertama) -->
+    <audio id="bgMusic" loop preload="auto">
+        <!-- Ganti src dengan file musikmu sendiri -->
+        <source src="The Night We Met - Lord Huron.mp3" type="audio/mpeg">
+        <!-- Fallback: jika file tidak bisa di-load, tidak error -->
+    </audio>
+
+    <!-- HALAMAN 1: Amplop -->
+    <div id="page1">
+        <div class="title">Press the<br>Envelope</div>
+        <div class="envelope" id="envelopeBtn">
+            <div class="flap"></div>
+            <div class="seal"></div>
+        </div>
+        <div class="tap-hint">tap to lanjut</div>
+    </div>
+
+    <!-- HALAMAN 2: Kartu Ucapan dengan Foto Polaroid -->
+    <div id="page2">
+        <div class="card-wrap">
+            <div class="card-envelope-bg">
+                <div class="card-flap-bg"></div>
+                <div class="note" id="noteBtn">
+                    <div class="happy">Happy<br>Birthday</div>
+                    <div class="date">23-Agustus-2026</div>
+                </div>
+                <!-- Foto Polaroid (border putih tebal + bayangan) -->
+                <div class="polaroid polaroid1">
+                    <img src="01ade.jpeg" alt="foto kenangan">
+                    <div class="polaroid-caption"></div>
+                </div>
+                <div class="polaroid polaroid2">
+                    <img src="02ade.jpeg" alt="foto bersama">
+                    <div class="polaroid-caption"></div>
+                </div>
+                <div class="polaroid polaroid3">
+                    <img src="03ade.jpeg" alt="foto senyum">
+                    <div class="polaroid-caption"></div>
+                </div>
+                <div class="polaroid polaroid4">
+                    <img src="04ade.jpeg" alt="foto lucu">
+                    <div class="polaroid-caption"></div>
+                </div>
+                <!-- Dekorasi bunga & kupu -->
+                <div class="deco rose">🌹</div>
+                <div class="deco lily">🌸</div>
+                <div class="deco butterfly">🦋</div>
+                <div class="deco blossom">🌸</div>
+                <div class="deco rose2">🌺</div>
+                <div class="deco lily2">🌷</div>
+                <div class="deco butterfly2">🦋</div>
+                <div class="deco blossom2">🌼</div>
+                <div class="deco butterfly3">🦋</div>
+            </div>
+        </div>
+        <div class="greeting-text">
+            Selamat ulang tahun Adee! kecepetan nyak ngasihnya <b>HHHEHEHHEEHE</b>, <b>SELAMAAAT YAAA</b>. 🎉
+        </div>
+        <div class="tap-hint" style="margin-top:14px;">tap kertas untuk lanjut</div>
+    </div>
+
+    <!-- HALAMAN 3: Surat Panjang dengan Scroll -->
+    <div id="page3">
+        <div class="letter-paper">
+            <div class="deco rose" style="top:-8%; right:6%;">🌹</div>
+            <div class="letter-text">
+                <p class="to">Untuk <b>Ade</b>,</p>
+                <p>
+                    Haii Adek ngga kerasa ya udah makin dewasa bentar lagi juga mau masuk SMA HBD ya!!
+                    kalau ade buka ini mungkin dengan kaka yang ngga ada lagi buat ade dan juga maaf yah
+                    kaka cuman bisa ngasih ini buat adek tapi keknya ini effort terakhir kaka kado pertama
+                    dan terakhir dari kaka buat adek maaf kaka selalu mempermasalahkan hal hal kecil yang 
+                    menurut ade biasa aja tapi itu semua karna kaka butuh ade ko dan kaka juga sadar sekarang
+                    keknya emang kita ngga bisa lagi buat kayak dulu setelah banyaknya masalah dari kita dan
+                    setelah berkali kali kaka memperbaiki kita dan setelah berkali kali kaka ngusahain ini 
+                    terkadang lucu sih hubungan yang selucu kemarin yang di mana saling butuh saling ngabarin
+                    saling excited saling fast respon jadinya malah mau bales balesan sekarang
+                    ya kalau mau di bilang kangen sih iya tapi keknya uda ngga bisa lagi terlepas dari ade
+                    yang sering hilang ilangan dan terlepas dari kesibukan ade yang ngga selesai selesai itu
+                    dan bahkan setiap kaka mendengar omongan orang kaka nanemin ke hati kaka "oh pasti ade bakal sadar"
+                    tapi lama kelamaan keknya semua itu sia sia aja dan bahkan sampai kaka mikir "emang mau samapai kapan gini terus"
+                    sia sia aja berulang ulang kali kaka nangis berulang ulang kali kaka coba buat bertahan berulang ulang kali
+                    kaka menjelaskan ke ade berulang ulang kali kaka mencoba buat memaklumi berulang ulang kali kaka mencoba buat
+                    ngga ovt berulang ulang kali kaka mencoba turinin ego kaka bahkan sampai di fase cape dan sadar dan bukannya ade ya dulu bilang
+                    ke kaka "harus setara" kalau ade tau semuanya hanya kaka mau ade itu sadar dan kita sekarang uda flat banget ya..tapi tau ngga si lucunya apa terkadang kalau kaka
+                    mau ngelakuin sesuatu kaka sering buka wa ade loh yang dimana chat kaka juga belum di bales
+                    bahkan sampai berhari hari dan keknya sekarang kaka sadar ade ngga butuh kaka terlepas dari
+                    itu kaka bakal ngelepas ade lucu sih niatnya mau bikin ade sadar malah kaka sendiri yang dibuat sadar
+                    dan jujur bahkan di saat kaka ngetik ini aja kaka sampe nangis loh maafin kaka yang
+                    dulu yang ngga peka sama ade ngga ngertiin perasaan ade bahkan kalau perbuatan itu semua
+                    yang bikin ade jadi sekarang kaka maklumin ko kalau juga ade benci ke kaka gapapa ko dan setelah
+                    ini kaka usahain buat ngga ganggu ade lagi buat ngga nyari "ade kemanaa" atau "ade uda pulang" dan semuanya
+                    jujur kaka seneng banget uda berkesempatan bertemu dengan soseorang sehangat ade dan tolong buat lupain
+                    semua tentang kaka bahkan jangan anggap kaka lagi setelah ini jaga diri baik baik ya kurangin tidur kemalaman
+                    nanti buat siapa pun yang gantiin kaka tolong perlakukan dia dengan baik ya dan jaga perasaannya ya bahkan jangan buat
+                    nangis oh iya satu lagi BIRTHDAY ADEEEEKK 
+                </p>
+                <p class="signature">Dari<br>Kaka</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
