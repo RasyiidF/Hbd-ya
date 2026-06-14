@@ -1,19 +1,19 @@
 let bgMusic = null;
 let musicStarted = false;
 
-// Fungsi untuk memutar musik (hanya sekali)
+// Fungsi memutar musik (hanya sekali)
 function playMusicOnPage2() {
     if (bgMusic && !musicStarted) {
         bgMusic.play().then(() => {
             musicStarted = true;
-            console.log("Musik diputar di halaman 2");
+            console.log("Musik diputar setelah halaman 2 muncul");
         }).catch(err => {
             console.log("Gagal memutar musik:", err);
         });
     }
 }
 
-// Pindah dari halaman 1 ke halaman 2
+// Buka halaman 2 (amplop diklik)
 function openCard() {
     const page1 = document.getElementById('page1');
     const page2 = document.getElementById('page2');
@@ -21,12 +21,12 @@ function openCard() {
     page1.classList.add('hide');
     setTimeout(() => {
         page2.classList.add('show');
-        // Musik mulai SETELAH halaman 2 tampil
+        // Musik mulai saat halaman 2 muncul
         playMusicOnPage2();
     }, 400);
 }
 
-// Pindah dari halaman 2 ke halaman 3
+// Buka halaman 3 (kertas diklik)
 function openLetter() {
     const page2 = document.getElementById('page2');
     const page3 = document.getElementById('page3');
@@ -35,11 +35,11 @@ function openLetter() {
     page2.classList.add('hide');
     setTimeout(() => {
         page3.classList.add('show');
-        // Musik sudah berjalan dari halaman 2, tidak perlu diputar lagi
+        // Musik sudah berjalan, tidak perlu diputar lagi
     }, 400);
 }
 
-// Inisialisasi setelah halaman dimuat
+// Inisialisasi
 document.addEventListener('DOMContentLoaded', () => {
     bgMusic = document.getElementById('bgMusic');
     if (bgMusic) {
@@ -49,9 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     const envelopeBtn = document.getElementById('envelopeBtn');
     const noteBtn = document.getElementById('noteBtn');
-    
-    // Hapus atau komentar bagian firstInteraction karena musik hanya dipicu dari openCard
-    // (tidak perlu interaksi global lagi)
     
     if (envelopeBtn) {
         envelopeBtn.addEventListener('click', openCard);
