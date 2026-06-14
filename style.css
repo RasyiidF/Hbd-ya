@@ -179,6 +179,7 @@ html, body {
     text-align: center;
     cursor: pointer;
     transition: transform 0.3s ease;
+    z-index: 20;
 }
 
 .note:hover {
@@ -236,16 +237,17 @@ html, body {
 }
 
 .polaroid1 { top: -10%; left: -8%; transform: rotate(-8deg); }
-.polaroid2 { top: -15%; right: -12%; transform: rotate(6deg); }
+.polaroid2 { top: 25%; right: -12%; transform: rotate(6deg); }
 .polaroid3 { bottom: -12%; left: 5%; transform: rotate(4deg); }
 .polaroid4 { bottom: -8%; right: -8%; transform: rotate(-6deg); }
 
-/* Dekorasi */
+/* ========== BUNGA DAN KUPU-KUPU ========== */
 .deco {
     position: absolute;
     font-size: 2.5rem;
     pointer-events: none;
     user-select: none;
+    z-index: 15;
 }
 
 .rose { top: -6%; right: 8%; font-size: clamp(2.5rem, 6vw, 4rem); }
@@ -407,7 +409,7 @@ html, body {
         transform: scale(1.02);
     }
     .deco {
-        display: none;
+        font-size: 1.2rem;
     }
     .card-flap-bg {
         display: none;
